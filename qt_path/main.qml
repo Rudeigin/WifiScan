@@ -8,7 +8,7 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 640
-    color: "#5a524d"
+    color: "white"
     title: qsTr("Wi-Fi signal")
 
     Drawer {
@@ -55,7 +55,7 @@ ApplicationWindow {
                     onClicked: stackView.pop()
                 }
                 Label {
-                    text: "Hi, pdr"
+                    text: "Hi"
                     elide: Label.ElideRight
                     horizontalAlignment: Qt.AlignHCenter
                     verticalAlignment: Qt.AlignVCenter
@@ -70,9 +70,8 @@ ApplicationWindow {
     StackView {
             id: stackView
             anchors.fill: parent
-            //vstav' kartinky s barugoi
             initialItem: Label {
-                text: "Would you some RSSI?"
+                text: "Выберете в меню нужный режим."
                 anchors.margins: 20
 //                anchors.top: logo.bottom
                 anchors.left: parent.left
