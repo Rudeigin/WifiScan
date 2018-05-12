@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Analyzer</string>
+    <string name="text_init">Для получения данных нажмите \'обновить\'.</string>
+</resources>
