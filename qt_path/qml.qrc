@@ -3,6 +3,5 @@
         <file>main.qml</file>
         <file>TextMod.qml</file>
         <file>ViewMod.qml</file>
-        <file>AboutMod.qml</file>
     </qresource>
 </RCC>
