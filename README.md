@@ -1,4 +1,4 @@
 # WifiScan
 
-Java_path - Работающий проект на java \n
+Java_path - Работающий проект на java,
 Qt_path - Только дизайн
