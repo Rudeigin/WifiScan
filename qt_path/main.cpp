@@ -12,8 +12,7 @@ int main(int argc, char *argv[])
 
     QObject* root = engine.rootObjects()[0];
     signal_rss *sig = new signal_rss(root);
-    QObject::connect(root, SIGNAL(qmlSignal()),
-    sig, SLOT(wifi_slot()));
-
+//    QObject::connect(root, SIGNAL(qmlSignal()),
+//    sig, SLOT(wifi_slot()));
     return app.exec();
 }

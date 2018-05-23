@@ -10,7 +10,12 @@ class signal_rss : public QObject {
     Q_OBJECT
 public:
     explicit signal_rss(QObject *parent = 0);
-
+private:
+    int buff_rssi;
+    int rssi;
+    QTimer * timer;
+    QObject * viewMod;
+    QObject * textMod;
 signals:
 
 public slots:

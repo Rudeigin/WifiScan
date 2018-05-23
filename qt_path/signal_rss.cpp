@@ -10,18 +10,22 @@
 #endif
 
 signal_rss::signal_rss(QObject *parent) : QObject(parent) {
+    textMod = this->parent()->findChild<QObject*>("textMod");
+    viewMod = this->parent()->findChild<QObject*>("viewMod");
 
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(wifi_slot()));
+    timer->start(1000);
 }
 
 void signal_rss::wifi_slot() {
-    QObject * textMod = this->parent()->findChild<QObject*>("textMod");
-    QObject * viewMod = this->parent()->findChild<QObject*>("viewMod");
-    QString str;
-    int rssi = get_rssi();
-    if(rssi == -100) str = "Error or no signal.";
-    else             str = "Signal: " + QString::number(rssi) + "/100";
-    textMod->setProperty("text", str);
-    viewMod->setProperty("value", rssi);
+    buff_rssi = get_rssi();
+    if(rssi != buff_rssi) {
+        rssi = buff_rssi;
+        if(rssi == -100) textMod->setProperty("text", "Error or no signal.");
+        else             textMod->setProperty("text", "Signal: " + QString::number(rssi) + "/100");
+        viewMod->setProperty("value", rssi);
+    }
 }
 
 int get_rssi() {

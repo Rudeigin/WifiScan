@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>TextMod.qml</file>
-        <file>ViewMod.qml</file>
     </qresource>
 </RCC>
