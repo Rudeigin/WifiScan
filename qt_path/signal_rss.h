@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QVariant>
+#include <QString>
+#include <QTimer>
 
 class signal_rss : public QObject {
     Q_OBJECT
@@ -15,6 +17,8 @@ public slots:
     void wifi_slot();
 };
 
-QString get_rssi();
+int get_rssi();
+int get_iflinux();
+int get_ifandroid();
 
 #endif // SIGNAL_RSS_H

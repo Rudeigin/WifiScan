@@ -1,7 +1,6 @@
 TEMPLATE = app
 
 QT += qml quick
-#QT += androidextras
 CONFIG += c++11
 
 SOURCES += main.cpp \
@@ -32,5 +31,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+android {
+    QT += androidextras
+}
+
 HEADERS += \
     signal_rss.h
+
+DISTFILES += java/src/org/qwifi/stren.java
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/java

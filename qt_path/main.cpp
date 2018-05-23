@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "signal_rss.h"
-//#include <QtAndroidExtras>
 
 int main(int argc, char *argv[])
 {

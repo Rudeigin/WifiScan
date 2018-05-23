@@ -1,7 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1
-//import QtQuick.Controls.Material 2.1
+import QtQuick.Controls.Styles 1.4
 
 ApplicationWindow {
     id: window
@@ -13,18 +13,10 @@ ApplicationWindow {
     signal qmlSignal()
 
     header: ToolBar {
-        //Material.color: "grey"
-        //Material.foreground: "black"
+        height: 60
         RowLayout {
                 anchors.fill: parent
 
-//                ToolButton {
-//                    text: qsTr("?")
-//                    onClicked: {
-//                        about.visible = "true"
-////                        viewMod.visible = "false" //why don't work?!
-//                    }
-//                }
                 Label {
                     text: "Hi"
                     elide: Label.ElideRight
@@ -33,14 +25,14 @@ ApplicationWindow {
                     Layout.fillWidth: true
                 }
                 ToolButton {
-                    text: qsTr(">")
+                    height: 60
+                    text: qsTr(" RUN >")
                     onClicked: {
                         viewMod.visible = "true"
                         qmlSignal()
-//                        about.visible = "false"
                     }
                 }
-            }
+        }
     }
 
     ViewMod {
@@ -53,15 +45,4 @@ ApplicationWindow {
         objectName: "textMod"
         visible: true
     }
-
-//    Dialog {
-//        TextEdit {
-//            id: about
-//            visible: false
-//            width: parent.width
-//            text: "Программа показывает силу сигнала wi-fi. \n Зачение изменяется от 0 до 100. \nЧем ближе значение к 100, тем лучше сигнал."
-//            wrapMode: TextEdit.Wrap
-//            font.pixelSize: 16
-//        }
-//    }
 }
